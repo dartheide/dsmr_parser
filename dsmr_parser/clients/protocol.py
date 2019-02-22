@@ -80,7 +80,7 @@ class DSMRProtocol(asyncio.Protocol):
 
     def data_received(self, data):
         """Add incoming data to buffer."""
-        data = data.decode('ascii')
+        data = data.decode('ascii', 'ignore')
         self.log.debug('received data: %s', data)
         self.telegram_buffer.append(data)
 
